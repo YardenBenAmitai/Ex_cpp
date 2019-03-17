@@ -10,7 +10,7 @@ if [ $MakefileExist -gt 0 ]
         exit 7
 fi
 chmod u+x ./${ARRAY[0]}
-valgrind ./${ARRAY[@]} --lead-check=full --error-exitcode=33
+valgrind ./${ARRAY[@]} --leak-check=full --error-exitcode=33
 valgrindOUT=$?
 valgrind --tool=helgrind ./${ARRAY[@]} --error-exitcode=33
 helgrindOUT=$?
