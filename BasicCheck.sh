@@ -12,7 +12,7 @@ fi
 chmod u+x ./${ARRAY[0]}
 valgrind --leak-check=full --error-exitcode=3 -v ./${ARRAY[@]}  
 valgrindOUT=$?
-valgrind --tool=helgrind ./${ARRAY[@]} --error-exitcode=33
+valgrind --tool=helgrind --error-exitcode=3 ./${ARRAY[@]} 
 helgrindOUT=$?
 if [[ valgrindOUT -gt 0 && helgrindOUT -gt 0 ]]
  then   
