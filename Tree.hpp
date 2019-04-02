@@ -10,6 +10,7 @@ struct Node{
 	public:
 		Node(int val){value=val; right=NULL; left=NULL;}
 		Node(struct Node* l, struct Node* r, int val) { value=val; right=r; left=l;}
+	        ~Node(){delete (left); delete(right); delete (this);}
 		struct Node* getLeft() { return left;}
 		struct Node* getRight() {return right;}
 		int getValue(){return value;}
