@@ -109,7 +109,7 @@ namespace ariel
 			if(Troot->getValue()==key) 
 			{cout<<"left end"<<endl;
 				return Troot->getLeft()->getValue();}
-			else if(FindLeaf(Troot, key)==NULL) 
+			else if(FindLeaf(Troot, key)==NULL || FindLeaf(Troot,key)->getLeft()==NULL) 
 				throw std::invalid_argument("left: no such value"); 
 			else 
 				return FindLeaf(Troot,key)-> getLeft() -> getValue();
@@ -120,7 +120,7 @@ namespace ariel
 			if (Troot->getValue()==key) 
 			{cout<<"right end"<<endl;
 				return Troot->getRight()->getValue();} 
-			else if(FindLeaf(Troot, key)==NULL) 
+			else if(FindLeaf(Troot, key)==NULL || FindLeaf(Troot, key) -> getRight()==NULL) 
 				throw std::invalid_argument("right: no such value"); 
 			else 
 				return FindLeaf(Troot, key) -> getRight() -> getValue();
