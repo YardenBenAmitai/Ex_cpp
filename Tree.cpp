@@ -3,12 +3,9 @@
 using namespace ariel;
 
 void Tree::destroy_tree(struct Node *leaf){
-	if(leaf != NULL){
-		destroy_tree(leaf->getLeft());
-		destroy_tree(leaf->getRight());
-		delete leaf;
-		leaf=NULL;
-	}
+	delete (leaf->getLeft());
+	delete (leaf->getRight());
+	delete leaf;
 }
 
 struct Node* Tree::insert(struct Node* leaf, int key){
