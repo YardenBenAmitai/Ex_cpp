@@ -33,6 +33,10 @@ namespace ariel
 			Troot=NULL;
 		}
 		
+		~Tree() {
+			destroy_tree(Troot);
+		}
+		
 		void insert(int key) {  
 			Troot=insert(Troot, key);
 		}
