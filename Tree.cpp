@@ -5,7 +5,6 @@ using namespace ariel;
 void Tree::destroy_tree(struct Node *leaf){
 	delete (leaf->getLeft());
 	delete (leaf->getRight());
-	delete leaf;
 }
 
 struct Node* Tree::insert(struct Node* leaf, int key){
