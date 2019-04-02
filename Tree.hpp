@@ -70,7 +70,6 @@ namespace ariel
 		}
 		
 		int parent(int key) {
-			cout<<"parent"<<endl;
 			if(Troot->getValue()==key) 
 				throw std::invalid_argument("parent: root has no parent");
 			else {
@@ -78,11 +77,11 @@ namespace ariel
 				while (temp!=NULL){
 					if(key > temp->getValue()){
 						if(temp->getRight()->getValue()==key)
-						{ cout<<"parent end"<<endl; return temp->getValue();}
+							return temp->getValue();
 						temp=temp->getRight();
 					}else{
 						if(temp->getLeft()->getValue()==key)
-						{cout<<"parent end"<<endl; return temp->getValue();}
+							return temp->getValue();
 						temp=temp->getLeft();
 					}
 				}
